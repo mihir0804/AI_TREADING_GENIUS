@@ -1,0 +1,136 @@
+{
+    "trading": {
+        "initial_capital": 100000.0,
+        "max_position_size": 0.1,
+        "commission_rate": 0.001,
+        "min_commission": 1.0,
+        "max_trades_per_day": 50,
+        "min_signal_confidence": 0.6,
+        "max_signals_per_cycle": 10
+    },
+    "risk_management": {
+        "max_portfolio_risk": 0.05,
+        "max_daily_loss": 0.03,
+        "stop_loss_threshold": 0.05,
+        "take_profit_threshold": 0.15,
+        "max_correlation": 0.7,
+        "var_confidence": 0.95,
+        "max_leverage": 2.0,
+        "min_cash_reserve": 0.1,
+        "emergency_stop_loss": 0.15
+    },
+    "symbols": {
+        "primary": [
+            "AAPL",
+            "GOOGL",
+            "MSFT",
+            "AMZN",
+            "TSLA"
+        ],
+        "secondary": [
+            "NVDA",
+            "META",
+            "NFLX",
+            "AMD",
+            "INTC"
+        ],
+        "sectors": [
+            "SPY",
+            "QQQ",
+            "XLF",
+            "XLK",
+            "XLE"
+        ],
+        "crypto": [],
+        "forex": []
+    },
+    "ml_models": {
+        "retrain_frequency_hours": 24,
+        "min_training_samples": 1000,
+        "validation_split": 0.2,
+        "max_features": 20,
+        "ensemble_weights": {
+            "random_forest": 0.3,
+            "gradient_boosting": 0.3,
+            "neural_network": 0.2,
+            "lstm": 0.2
+        }
+    },
+    "data": {
+        "update_frequency_minutes": 1,
+        "historical_lookback_days": 252,
+        "cache_expiry_minutes": 5,
+        "max_api_calls_per_minute": 100,
+        "data_sources": {
+            "primary": "yahoo_finance",
+            "backup": "alpha_vantage"
+        }
+    },
+    "ai_advisor": {
+        "analysis_frequency_minutes": 15,
+        "max_insights_per_session": 5,
+        "confidence_threshold": 0.7,
+        "cache_expiry_minutes": 5
+    },
+    "backtesting": {
+        "default_start_date": "2023-01-01",
+        "default_end_date": "2024-12-31",
+        "default_initial_capital": 100000.0,
+        "commission_rate": 0.001,
+        "slippage": 0.001,
+        "benchmark": "SPY"
+    },
+    "logging": {
+        "log_level": "INFO",
+        "max_file_size_mb": 10,
+        "backup_count": 5,
+        "log_retention_days": 30
+    },
+    "system": {
+        "max_threads": 4,
+        "timeout_seconds": 30,
+        "retry_attempts": 3,
+        "health_check_interval_minutes": 5
+    },
+    "api_keys": {
+        "openai_api_key": "",
+        "alpha_vantage_key": "",
+        "polygon_key": "",
+        "broker_api_key": ""
+    },
+    "strategies": {
+        "neural_momentum": {
+            "enabled": true,
+            "weight": 0.25,
+            "lookback_period": 20,
+            "min_momentum": 0.02
+        },
+        "ensemble_trend": {
+            "enabled": true,
+            "weight": 0.25,
+            "trend_threshold": 2,
+            "confirmation_period": 5
+        },
+        "ai_pattern": {
+            "enabled": true,
+            "weight": 0.2,
+            "pattern_confidence": 0.7
+        },
+        "adaptive_mean_reversion": {
+            "enabled": true,
+            "weight": 0.15,
+            "z_score_threshold": 1.5,
+            "lookback_period": 20
+        },
+        "multi_factor": {
+            "enabled": true,
+            "weight": 0.15,
+            "factor_weights": {
+                "momentum": 0.3,
+                "value": 0.25,
+                "quality": 0.25,
+                "volatility": 0.2
+            }
+        }
+    }
+}
